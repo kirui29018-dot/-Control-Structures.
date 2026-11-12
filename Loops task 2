@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double balance, withdrawalAmount;
+    char choice = 'Y';
+
+    cout << "===== SAVINGS WITHDRAWAL SYSTEM =====" << endl;
+
+    cout << "Enter your account balance: ";
+    cin >> balance;
+
+    while (balance > 0 && (choice == 'Y' || choice == 'y')) {
+
+        cout << "\nEnter withdrawal amount: ";
+        cin >> withdrawalAmount;
+
+        if (withdrawalAmount <= 0) {
+            cout << "Invalid withdrawal amount!" << endl;
+        }
+        else if (withdrawalAmount > balance) {
+            cout << "Insufficient balance!" << endl;
+        }
+        else {
+            balance = balance - withdrawalAmount;
+
+            cout << fixed << setprecision(2);
+            cout << "Withdrawal successful!" << endl;
+            cout << "Remaining balance: " << balance << endl;
+        }
+
+        if (balance > 0) {
+            cout << "\nDo you want to make another withdrawal? (Y/N): ";
+            cin >> choice;
+        }
+        else {
+            cout << "\nYour account balance is zero." << endl;
+            choice = 'N';
+        }
+    }
+
+    cout << "\nThank you for using our withdrawal system!" << endl;
+
+    return 0;
+}
