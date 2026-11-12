@@ -1,0 +1,40 @@
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    string employeeName;
+    double basicSalary, bonus, totalSalary;
+
+    cout << "===== EMPLOYEE BONUS SYSTEM =====" << endl;
+
+    for (int i = 1; i <= 5; i++) {
+        cout << "\nEmployee " << i << endl;
+
+        cout << "Enter employee name: ";
+        getline(cin, employeeName);
+
+        cout << "Enter basic salary: ";
+        cin >> basicSalary;
+
+        // Calculate bonus and total salary
+        bonus = 0.05 * basicSalary;
+        totalSalary = basicSalary + bonus;
+
+        // Display employee report
+        cout << fixed << setprecision(2);
+        cout << "\n----- EMPLOYEE REPORT -----" << endl;
+        cout << "Employee Name: " << employeeName << endl;
+        cout << "Basic Salary: " << basicSalary << endl;
+        cout << "Bonus: " << bonus << endl;
+        cout << "Total Salary: " << totalSalary << endl;
+
+        cout << "---------------------------" << endl;
+
+        cin.ignore();
+    }
+
+    return 0;
+}
