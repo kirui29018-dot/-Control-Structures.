@@ -1,0 +1,45 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string username, password;
+
+    // Predefined login credentials
+    string correctUsername = "admin";
+    string correctPassword = "12345";
+
+    do {
+        cout << "===== USER LOGIN SYSTEM =====" << endl;
+
+        cout << "Enter username: ";
+        cin >> username;
+
+        cout << "Enter password: ";
+        cin >> password;
+
+        // Check login credentials
+        if (username == correctUsername && password == correctPassword) {
+            cout << "\nAccess Granted!" << endl;
+        }
+        else {
+            cout << "\nIncorrect credentials, try again" << endl;
+        }
+
+    } while (username != correctUsername || password != correctPassword);
+
+    return 0;
+}
+
+===== USER LOGIN SYSTEM =====
+Enter username: john
+Enter password: 1234
+
+Incorrect credentials, try again
+
+===== USER LOGIN SYSTEM =====
+Enter username: admin
+Enter password: 12345
+
+Access Granted!
